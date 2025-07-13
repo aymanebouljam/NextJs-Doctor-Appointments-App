@@ -18,7 +18,7 @@ function Hero() {
                 appointments in just a few clicks, manage your health
                 effortlessly from anywhere.
               </p>
-              <Button><Link href='/explor'>Explore Now</Link></Button>
+              <Button><Link href='/explore'>Explore Now</Link></Button>
             </div>
           </div>
 
