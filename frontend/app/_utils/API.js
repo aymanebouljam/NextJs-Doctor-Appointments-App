@@ -5,7 +5,9 @@ const axiosGlobal = axios.create({
 });
 
 const getCategories = () => axiosGlobal.get("/categories?populate=*");
+const getDoctors = () => axiosGlobal.get("/doctors?populate=*");
 
 export default {
   getCategories,
+  getDoctors
 };

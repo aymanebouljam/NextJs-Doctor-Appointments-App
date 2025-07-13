@@ -19,7 +19,7 @@ export default function SearchCategories() {
 
   return (
     <div className="px-8 mb-10 flex flex-col">
-      <h2 className="font-bold text-center text-4xl mb-2">
+      <h2 className="font-bold text-center text-3xl mb-2">
         <span className="text-cyan-500 text-center">Search </span> Categories
       </h2>
 

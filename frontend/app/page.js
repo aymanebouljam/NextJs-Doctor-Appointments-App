@@ -1,3 +1,4 @@
+import DoctorsList from "./_components/DoctorsList";
 import Hero from "./_components/Hero";
 import Newsletter from "./_components/Newsletter";
 import SearchCategories from "./_components/SearchCategories";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <SearchCategories />
       <Newsletter />
+      <DoctorsList />
     </div>
   );
 }

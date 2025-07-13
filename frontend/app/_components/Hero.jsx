@@ -8,7 +8,7 @@ function Hero() {
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-32">
           <div>
-            <div className="max-w-lg md:max-w-none">
+            <div className="max-w-lg md:max-w-2xl text-center md:text-left">
               <h2 className="text-xl font-semibold text-gray-900 sm:text-2xl">
                 Skip the Wait. Book Care Instantly.
               </h2>
