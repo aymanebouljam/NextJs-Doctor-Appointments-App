@@ -23,6 +23,12 @@
         "videos",
         "audios"
       ]
+    },
+    "doctors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::doctor.doctor",
+      "mappedBy": "category"
     }
   }
 }
