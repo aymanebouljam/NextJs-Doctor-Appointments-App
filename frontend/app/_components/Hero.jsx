@@ -25,7 +25,7 @@ function Hero() {
           <div>
             <img
               src="assets/images/hero.jpg"
-              className="rounded-md border-2 border-cyan-700"
+              className="rounded-md shadow-lg border border-cyan-100 shadow-cyan-100"
               alt="hero"
             />
           </div>
