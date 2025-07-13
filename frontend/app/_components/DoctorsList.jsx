@@ -26,7 +26,7 @@ export default function DoctorsList() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  mt-10">
         {doctors.map((doc) => (
-          <div key={doc.id} className="border rounded-lg m-3 overflow-hidden">
+          <div key={doc.id} className="border rounded-lg m-3 overflow-hidden hover:shadow-xl hover-shadow-cyan-300 cursor-pointer hover:scale-105 transition-all ease-out ">
             <Image
               src={baseURL + doc?.image?.url}
               alt={doc.name}
