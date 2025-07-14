@@ -16,7 +16,6 @@ export default function DoctorsList() {
       .getDoctors()
       .then((res) => {
         setDoctors(res.data.data);
-        console.log(res.data?.data);
       })
       .catch((err) => console.error(err.message))
       .finally(() => setLoading(false));
