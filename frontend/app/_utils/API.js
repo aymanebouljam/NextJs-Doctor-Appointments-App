@@ -11,9 +11,11 @@ const getDoctorsByCategory = (category) =>
   axiosGlobal.get(
     `/doctors/?populate=*&filters[category][name][$containsi]=${category}`
   );
+const getDoctorDetails = (id) => axiosGlobal.get(`/doctors/${id}?populate=*`);
 
 export default {
   getCategories,
   getDoctors,
   getDoctorsByCategory,
+  getDoctorDetails,
 };

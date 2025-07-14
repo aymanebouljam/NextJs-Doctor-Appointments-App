@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import api from "../_utils/API";
 import Image from "next/image";
 import { BeatLoader } from "react-spinners";
+import Link from "next/link";
 
 export default function DoctorsList() {
   const [doctors, setDoctors] = useState([]);
@@ -34,9 +35,10 @@ export default function DoctorsList() {
           </div>
         ) : (
           doctors.map((doc) => (
-            <div
+            <Link
               key={doc.id}
-              className="flex flex-col border rounded-lg mx-auto w-full max-w-sm h-full"
+              href={`/details/${doc?.documentId}`}
+              className="flex flex-col border rounded-lg mx-auto w-full max-w-sm h-full hover:shadow-lg"
             >
               <Image
                 src={baseURL + doc?.image?.url}
@@ -73,7 +75,7 @@ export default function DoctorsList() {
                   Book Now
                 </h3>
               </div>
-            </div>
+            </Link>
           ))
         )}
       </div>
