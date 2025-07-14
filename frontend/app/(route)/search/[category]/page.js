@@ -1,6 +1,7 @@
 "use client";
 import API from "@/app/_utils/API";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, use, useState } from "react";
 import { BeatLoader } from "react-spinners";
 
@@ -33,8 +34,9 @@ export default function Search({ params }) {
         </div>
       ) : (
         doctors.map((doc) => (
-          <div
+          <Link
             key={doc.id}
+            href={`/details/${doc.documentId}`}
             className="max-w-xs sm:max-w-sm md:max-w-md border rounded-lg m-3 overflow-hidden 
                  cursor-pointer 
                  hover:scale-105 transition-all ease-out mx-auto"
@@ -72,7 +74,7 @@ export default function Search({ params }) {
                 Book Now
               </h3>
             </div>
-          </div>
+          </Link>
         ))
       )}
     </>

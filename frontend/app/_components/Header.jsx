@@ -36,7 +36,7 @@ function Header() {
   return (
     <div className="flex items-center justify-between p-4 shadow-sm">
       <div className="flex items-center gap-10">
-        <Image
+        <img
           src={"/assets/images/logo.png"}
           width={50}
           height={50}
@@ -59,7 +59,7 @@ function Header() {
         <Popover>
           <PopoverTrigger>
             <div className="rounded-full overflow-hidden w-10 h-10">
-              <Image
+              <img
                 src={"/assets/images/profile.jpg"}
                 width={40}
                 height={40}

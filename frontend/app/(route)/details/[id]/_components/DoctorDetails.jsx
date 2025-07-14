@@ -1,17 +1,18 @@
 import { GraduationCap, MapPin } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { PulseLoader } from "react-spinners";
+import BookAppointment from "./BookAppointment";
 
 export default function DoctorDetails({ doctor }) {
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
   return (
     <>
-      <h1 className="font-bold text-xl col-span-full lg:mx-3 mx-auto p-4">Details</h1>
+      <h1 className="font-bold text-xl col-span-full lg:mx-3 mx-auto p-4">
+        Details
+      </h1>
       {doctor ? (
-        <Link
+        <div
           key={doctor?.id}
           href={`/details/${doctor?.doctorumentId}`}
           className="col-span-full flex flex-col mx-8 border rounded-lg p-8 gap-2 lg:flex-row lg:mx-3 xl:col-span-2 xl:h-max  hover:shadow-md"
@@ -37,16 +38,14 @@ export default function DoctorDetails({ doctor }) {
               {doctor?.category?.name}
             </h2>
 
-            <h3 className="mt-auto py-2.5 px-4 rounded-full  cursor-pointer  bg-cyan-700 text-white transition-all ease-in-out font-medium hover:bg-cyan-600  self-start tex-center text-sm">
-              Book Appointment
-            </h3>
+            <BookAppointment />
 
             <h2 className="font-bold text-xl mt-3">About</h2>
             <p className="text-gray-500">
               Specializing in {doctor?.category?.name}
             </p>
           </div>
-        </Link>
+        </div>
       ) : (
         <div className="col-span-full flex items-center justify-center  text-center">
           <PulseLoader />

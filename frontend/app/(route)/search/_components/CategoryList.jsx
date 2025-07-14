@@ -31,7 +31,7 @@ export default function CategoryList() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full px-3 lg:w-[250px] lg:p-0 ">
+    <div className="flex flex-col w-full px-3 lg:w-[250px] lg:p-0 max-h-[40vh] overflow-y-auto ">
       <Command>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
