@@ -36,6 +36,7 @@ export default function SearchCategories() {
                 alt={cat.name}
                 width={70}
                 height={70}
+                className="mx-auto"
               />
               <span>{cat?.name}</span>
             </Link>

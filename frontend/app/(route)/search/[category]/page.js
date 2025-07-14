@@ -26,6 +26,7 @@ export default function Search({ params }) {
 
   return (
     <>
+    <h1 className=" col-span-full font-bold text-cyan-500 text-lg px-3">{category}</h1>
       {loading ? (
         <div className="text-center col-span-3 flex items-center justify-center">
           <BeatLoader />
