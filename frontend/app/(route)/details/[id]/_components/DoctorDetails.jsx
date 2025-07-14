@@ -11,7 +11,7 @@ export default function DoctorDetails({ doctor }) {
       <h1 className="font-bold text-xl col-span-full lg:mx-3 mx-auto p-4">
         Details
       </h1>
-      {doctor ? (
+      {doctor && (
         <div
           key={doctor?.id}
           href={`/details/${doctor?.doctorumentId}`}
@@ -38,17 +38,13 @@ export default function DoctorDetails({ doctor }) {
               {doctor?.category?.name}
             </h2>
 
-            <BookAppointment />
+            <BookAppointment doctor = {doctor} />
 
             <h2 className="font-bold text-xl mt-3">About</h2>
             <p className="text-gray-500">
               Specializing in {doctor?.category?.name}
             </p>
           </div>
-        </div>
-      ) : (
-        <div className="col-span-full flex items-center justify-center  text-center">
-          <PulseLoader />
         </div>
       )}
     </>

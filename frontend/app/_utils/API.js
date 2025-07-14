@@ -13,9 +13,13 @@ const getDoctorsByCategory = (category) =>
   );
 const getDoctorDetails = (id) => axiosGlobal.get(`/doctors/${id}?populate=*`);
 
+const bookAppointment = (data) =>
+  axiosGlobal.post("/appointments", data);
+
 export default {
   getCategories,
   getDoctors,
   getDoctorsByCategory,
   getDoctorDetails,
+  bookAppointment,
 };

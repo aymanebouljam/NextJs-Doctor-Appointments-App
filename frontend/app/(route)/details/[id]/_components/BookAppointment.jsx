@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import {
   Dialog,
@@ -8,10 +9,16 @@ import {
 } from "@/components/ui/dialog";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
-export default function BookAppointment() {
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import API from "@/app/_utils/API";
+import { toast } from "sonner";
+
+export default function BookAppointment({ doctor }) {
   const [date, setDate] = useState(new Date());
   const [timeSlot, setTimeSlot] = useState([]);
   const [selectedTime, setSelectedTime] = useState(null);
+  const { user, getToken } = useKindeBrowserClient();
+  const token = getToken();
 
   const generateTimeSlot = (start, end, period) => {
     const slots = [];
@@ -30,6 +37,26 @@ export default function BookAppointment() {
       ...generateTimeSlot(2, 5, "pm"),
     ]);
   }, []);
+
+  const book = () => {
+    if (user && doctor && date && selectedTime) {
+      API.bookAppointment({
+        data: {
+          user_name: `${user?.given_name} ${user?.family_name}`,
+          email: user?.email,
+          date: date,
+          time: selectedTime,
+          doctor: doctor?.documentId,
+        },
+      })
+        .then((res) => {
+          if (res) {
+            toast("Appoitment has been booked.");
+          }
+        })
+        .catch((err) => console.error(err.message));
+    }
+  };
 
   return (
     <Dialog>
@@ -70,7 +97,13 @@ export default function BookAppointment() {
               </div>
             </div>
           </div>
-          <Button disabled={!(date && selectedTime)} className='bg-white border border-cyan-500 text-cyan-600 hover:text-white mt-3 w-full xl:w-1/2 mx-auto'>Book Now</Button>
+          <Button
+            disabled={!(date && selectedTime)}
+            className="bg-white border border-cyan-500 text-cyan-600 hover:text-white mt-3 w-full xl:w-1/2 mx-auto"
+            onClick={book}
+          >
+            Book Now
+          </Button>
         </DialogHeader>
       </DialogContent>
     </Dialog>
