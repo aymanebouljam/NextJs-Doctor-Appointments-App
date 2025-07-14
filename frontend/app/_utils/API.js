@@ -5,9 +5,15 @@ const axiosGlobal = axios.create({
 });
 
 const getCategories = () => axiosGlobal.get("/categories?populate=*");
+
 const getDoctors = () => axiosGlobal.get("/doctors?populate=*");
+const getDoctorsByCategory = (category) =>
+  axiosGlobal.get(
+    `/doctors/?populate=*&filters[category][name][$containsi]=${category}`
+  );
 
 export default {
   getCategories,
-  getDoctors
+  getDoctors,
+  getDoctorsByCategory,
 };
