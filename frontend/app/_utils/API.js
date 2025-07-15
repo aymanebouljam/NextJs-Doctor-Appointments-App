@@ -13,8 +13,14 @@ const getDoctorsByCategory = (category) =>
   );
 const getDoctorDetails = (id) => axiosGlobal.get(`/doctors/${id}?populate=*`);
 
-const bookAppointment = (data) =>
-  axiosGlobal.post("/appointments", data);
+const bookAppointment = (data) => axiosGlobal.post("/appointments", data);
+
+const myBookingList = (email) =>
+  axiosGlobal.get(
+    `appointments?filters[email][$eq]=${email}&populate[doctor][populate]=image`
+  );
+
+const deleteAppointment = (id) => axiosGlobal.delete(`appointments/${id}`);
 
 export default {
   getCategories,
@@ -22,4 +28,6 @@ export default {
   getDoctorsByCategory,
   getDoctorDetails,
   bookAppointment,
+  myBookingList,
+  deleteAppointment,
 };

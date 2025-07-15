@@ -1,9 +1,10 @@
 import React from "react";
 import CategoryList from "./_components/CategoryList";
 
+
 export default function layout({ children }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 pt-4">
+    <div className="grid grid-cols-1 lg:grid-cols-4 pt-4 min-h-screen">
       <div className="pt-3 flex items-center justify-center md:items-start">
         <CategoryList />
       </div>

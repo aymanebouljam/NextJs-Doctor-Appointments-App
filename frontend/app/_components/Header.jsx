@@ -74,7 +74,7 @@ function Header() {
                 My profile
               </li>
               <li className="hover:bg-cyan-100 font-medium rounded-md px-4 py-2 transition-all ease-in-out cursor-pointer">
-                My bookings
+                <Link href="/my_bookings">My bookings</Link>
               </li>
               <li className="hover:bg-cyan-100 font-bold hover:scale-105 rounded-md px-4 py-2 transition-all ease-in-out cursor-pointer">
                 <LogoutLink>Log out</LogoutLink>
